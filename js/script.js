@@ -3,25 +3,25 @@ function createList() {
 
     listContainer. innerHTML = "";
 
+    if (books.length === 0) {
+        listContainer.innerHTML = "<p>There are no more elements in the list.</p>";
+    }
 
     books.forEach(function (item) {
-         listContainer.innerHTML += `<li>ISBN: ${item.isbn}, a ${item.title} <i class="fa fa-trash" data-item="${item}"></i></li>`; 
+         listContainer.innerHTML += `<li>ISBN: ${item.isbn}, a ${item.title} <i class="fa fa-trash"></i></li>`; 
     });
 
     const trashCans = document.querySelectorAll("li i");
 
     trashCans.forEach(function (can) {
-        can.addEventListener("click", removeBook);
+        can.addEventListener("click", removeFromList);
     });
 
 }
 
-createList();
+function removeFromList() {
 
-function removeBook() {
-    console.log(event);
-
-    const deleteBook = event.target.dataset.item;
+    const deleteBook = event.target.offsetParent;
 
     const newList = books.filter(function (item) {
         if (deleteBook !== item) {
@@ -30,6 +30,8 @@ function removeBook() {
     });
 
     books = newList;
-
-    createList();
 }
+
+window.onload = function() {
+    createList();
+  };
