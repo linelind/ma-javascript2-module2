@@ -1,7 +1,24 @@
 body {
   max-width: 500px;
-  margin: 50px auto;
+  margin: 80px auto;
   background-color: rgb(203, 228, 218);
+}
+
+.breadcrumbs {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: darkcyan;
+  margin-right: 20px;
+}
+
+.active {
+  border-bottom: 2px solid darkcyan;
+  padding-bottom: 4px;
 }
 
 h1 {
@@ -44,4 +61,24 @@ li {
   border-radius: 5px;
   background-color: rgb(238, 237, 237);
   padding: 10px 5px;
+  margin-top: 30px;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 10px;
+  align-items: ;
+  justify-content: center;
+}
+
+input,
+button {
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid darkcyan;
+}
+
+button {
+  background-color: darkcyan;
+  color: white;
 }
