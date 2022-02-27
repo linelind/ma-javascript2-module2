@@ -26,6 +26,7 @@ function createList() {
 function removeFromList() {
 
     const id = event.target.dataset.id;
+    console.log(event.target.dataset.id);
 
     const newList = books.filter(function (listItem) {
         if(id !== listItem.isbn) {

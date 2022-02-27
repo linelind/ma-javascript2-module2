@@ -35,7 +35,7 @@ function createList(listItems) {
     listContainer.innerHTML = "";
 
     if (listItems.length === 0) {
-        listContainer.innerHTML = `<p class="message">There are no more items in the list.</p>`;
+        listContainer.innerHTML = `<p class="message">There are no items in the list.</p>`;
     }  
 
     listItems.forEach(function(listItem) {
@@ -55,7 +55,6 @@ function createList(listItems) {
 function removeFromList() {
 
     const id = event.target.dataset.id;
-    console.log(event.target.dataset.id);
 
     const newList = listItems.filter(function (listItem) {
         if(parseInt(id) !== listItem.id) {
@@ -65,4 +64,5 @@ function removeFromList() {
 
     listItems = newList;
     createList(listItems);
+    
 } 
